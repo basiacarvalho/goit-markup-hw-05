@@ -2,6 +2,8 @@
   --active-color: #2196f3;
   --background-color-light: #f5f4fa;
   --background-color-dark: #2f303a;
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
+    0 2px 1px rgba(0, 0, 0, 0.2);
   --header-color: #212121;
   --icon-color: #afb1b8;
   --logo-top-color: #000;
@@ -245,8 +247,7 @@ p {
 
 .employee {
   background-color: var(--main-color);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 1px rgba(0, 0, 0, 0.14),
-    0 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--box-shadow);
   border-radius: 0 0 4px 4px;
 }
 
@@ -364,6 +365,60 @@ p {
 
 .social-link__icon-footer {
   fill: var(--main-color);
+}
+
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: (0 4px 4px rgba(0, 0, 0, 0.25));
+  box-sizing: border-box;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--main-color);
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+}
+
+.modal__close-btn-container {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--main-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+
+.modal__close-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--main-color);
+  border: none;
+  cursor: pointer;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* Portfolio page */

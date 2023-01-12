@@ -405,6 +405,10 @@ p {
 }
 
 .modal__close-btn {
+  border: none;
+}
+
+.modal__close-btn * {
   position: absolute;
   top: 6px;
   right: 6px;

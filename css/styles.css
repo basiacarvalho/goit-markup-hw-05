@@ -43,6 +43,7 @@ p {
 
 .link {
   text-decoration: none;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .link:hover,
@@ -88,11 +89,8 @@ p {
   width: 44px;
   height: 44px;
   padding: 12px;
-}
-
-.social-link__container:hover *,
-.social-link__container:focus * {
-  fill: var(--main-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link__container:hover,
@@ -119,18 +117,20 @@ p {
 .header__contact-icon {
   fill: var(--text-color);
   margin-right: 10px;
-}
-
-.header__contact-link:hover *,
-.header__contact-link:focus * {
-  color: var(--active-color);
-  fill: var(--active-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header__contact-link {
   color: var(--text-color);
   display: flex;
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.header__contact-link:hover .header__contact-icon,
+.header__contact-link:focus .header__contact-icon {
+  color: var(--active-color);
+  fill: var(--active-color);
 }
 
 .header__menu {
@@ -238,6 +238,36 @@ p {
   justify-content: space-between;
 }
 
+.box {
+  position: relative;
+  width: 370px;
+  height: 294px;
+}
+
+.box__img {
+  display: absolute;
+  bottom: 0;
+  z-index: 1;
+}
+
+.box__container {
+  position: absolute;
+  height: 70px;
+  width: 370px;
+  z-index: 2;
+  bottom: 0;
+  background: rgba(47, 48, 58, 0.8);
+}
+
+.box__title {
+  color: var(--main-color);
+  font-size: 14px;
+  line-height: 1.14;
+  padding: 27px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /*Fourth section of the main page - Our Team*/
 .employees {
   column-gap: 30px;
@@ -278,6 +308,12 @@ p {
 
 .social-link__icon {
   fill: var(--icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link__container:hover .social-link__icon,
+.social-link__container:focus .social-link__icon {
+  fill: var(--main-color);
 }
 
 /*Fifth section of the main page - Our Clients*/
@@ -293,10 +329,17 @@ p {
   border: 1px solid var(--icon-color);
   border-radius: 4px;
   padding: 16px 32px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.client__container:hover *,
-.client__container:focus * {
+.client__icon {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.client__container:hover .client__icon,
+.client__container:focus .client__icon {
   fill: var(--active-color);
 }
 
@@ -446,6 +489,8 @@ p {
   line-height: 1.63;
   padding: 6px 22px;
   text-align: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter__button:hover,

@@ -89,6 +89,7 @@ p {
   width: 44px;
   height: 44px;
   padding: 12px;
+  border-radius: 50%;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -231,6 +232,7 @@ p {
   height: 120px;
   padding: 25px 100px;
 }
+
 .feature__title {
   color: var(--header-color);
   font-size: 14px;
@@ -254,16 +256,13 @@ p {
 }
 
 .box__img {
-  display: absolute;
-  bottom: 0;
-  z-index: 1;
+  display: inline-block;
 }
 
 .box__container {
   position: absolute;
   height: 70px;
   width: 370px;
-  z-index: 2;
   bottom: 0;
   background: rgba(47, 48, 58, 0.8);
 }
@@ -343,6 +342,7 @@ p {
 }
 
 .client__icon {
+  fill: var(--icon-color);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -355,10 +355,6 @@ p {
 .client__container:hover,
 .client__container:focus {
   border-color: var(--active-color);
-}
-
-.client__icon {
-  fill: var(--icon-color);
 }
 
 /*Footer*/
@@ -376,12 +372,12 @@ p {
   color: rgba(255, 255, 255, 0.6);
 }
 
-.contact:not(:last-child) {
-  margin-bottom: 4.5px;
-}
-
 .contact__place {
   color: var(--main-color);
+}
+
+.contact:not(:last-child) {
+  margin-bottom: 4.5px;
 }
 
 .container-footer {
@@ -428,9 +424,8 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: (0 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-  z-index: 3;
 }
 
 .modal {
@@ -442,8 +437,7 @@ p {
   position: fixed;
   top: 50%;
   left: 50%;
-  transition-property: visibility, opacity, transform;
-  transition-duration: 850ms;
+  transition: visibility 850ms ease-in-out, opacity 850ms ease-in-out, transform 850ms ease-in-out;
   transform: translateX(-50%) translateY(-50%) scale(1);
   opacity: 1;
   visibility: visible;
@@ -560,14 +554,13 @@ p {
 
 .project__overlay-text {
   color: var(--main-color);
-  font-size: 18px;
   line-height: 1.55;
+  font-size: 18px;
 }
 
 .project__subtitle {
   font-size: 16px;
   line-height: 1.88;
-  padding-left: 24px;
   margin-top: 0;
   padding: 0 24px 20px;
 }
